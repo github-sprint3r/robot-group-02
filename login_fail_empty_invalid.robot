@@ -1,10 +1,8 @@
 *** Settings ***
 Library			Selenium2Library
-Test Template    test case : login fail
 Suite Setup     Open the login page
 Test Setup   	Go to login page
 Suite Teardown  Close Browser
-Resource        resources/login.robot
 
 *** Variables ***
 ${LOGIN PAGE}    http://localhost:7272/html/
@@ -18,7 +16,12 @@ ${INVALID INPUT}     abc
 
 *** Testcases ***                   USERNAME            PASSWORD
 
-empty username invalid PWD            ${EMPTY}		    ${INVALID INPUT}
+empty username invalid PWD
+    [Tags]     Empty username
+	Fill in username and password as    ${EMPTY}    ${INVALID INPUT}
+	Click login button
+	Error Page should be opened
+
 
 
 
