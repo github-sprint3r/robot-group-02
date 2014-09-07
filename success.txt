@@ -19,10 +19,10 @@ Login Success
 
 Fill login credentials
 	Input Text    name=username_field    demo
-	Input Password    name=password_field  demo 
+	Input Password    name=password_field  demo
 
 Welcome page is shown
-	Location Should Be    ${LOGIN PAGE}/welcome.html
+	Location Should Be    ${LOGIN PAGE}/error.html
 	Title Should Be    Welcome Page
 	Element Should Contain    tag=h1    Welcome Page
 	Page Should Contain Link    //div[@id="container"]/p/a    Logout
