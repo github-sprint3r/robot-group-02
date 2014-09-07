@@ -19,7 +19,7 @@ Login Success
 
 Fill login credentials
 	Input Text    name=username_field    demo
-	Input Password    name=password_field   mode 
+	Input Password    name=password_field  demo 
 
 Welcome page is shown
 	Location Should Be    ${LOGIN PAGE}/welcome.html
